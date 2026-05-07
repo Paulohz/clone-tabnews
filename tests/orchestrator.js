@@ -9,7 +9,7 @@ async function waitForAllServices() {
       minTimeout: 1000,
     });
 
-    async function fetchStatusPages(bail, tryNumber) {
+    async function fetchStatusPages() {
       const response = await fetch("http://localhost:3000/api/v1/status");
 
       if (response.status !== 200) {
@@ -19,6 +19,8 @@ async function waitForAllServices() {
   }
 }
 
-export default {
+const orcherstrator = {
   waitForAllServices,
 };
+
+export default orcherstrator;
